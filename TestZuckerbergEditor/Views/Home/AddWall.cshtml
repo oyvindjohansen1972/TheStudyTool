@@ -1,0 +1,18 @@
+﻿@model TestZuckerbergEditor.Models.Wall
+@{
+    ViewBag.Title = "AddPoster";
+}
+
+
+<div class="container">
+    <br /><br />
+    @using (Html.BeginForm("CreatePoster", "Home", FormMethod.Get))
+    {
+        <div class="text-center" role="form">
+            <input type="text" class="form-control col-centered" name="wallName" placeholder="Give your document a name">            
+            <br/>
+            <input type="submit" value="NEXT" class="btn btn-primary" />
+        </div>
+    }
+
+</div> <!-- container finished-->

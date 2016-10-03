@@ -1,0 +1,25 @@
+﻿@using TestZuckerbergEditor.Models
+@model IEnumerable<ViewModelForHomeView>
+@{
+    ViewBag.Title = "Home";
+}
+
+<div class="container">
+
+    <div class="text-center">
+        <br /><br />
+        @Html.ActionLink("CREATE A NEW DOCUMENT", "AddWall", "Home", new { @class = "btn btn-primary" })
+
+        <br />
+        <br />
+        <h3>My Documents</h3>
+
+        @foreach (ViewModelForHomeView link in @Model)
+        {
+            @Html.ActionLink(@link.description, "MySite", new { uniqueIdentifier = @link.posterIdentifier, posterPageNr = "1" })
+            <br />
+
+        }
+    </div>
+
+</div>

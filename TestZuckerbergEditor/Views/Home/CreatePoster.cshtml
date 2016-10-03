@@ -1,0 +1,41 @@
+﻿
+<div class="container">
+
+    <br />
+    <h2 style="text-align:center">@ViewBag.SideName</h2>
+    <br />
+    <div class="row">
+        @using (Html.BeginForm("CreatePoster", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+
+            <div class="form-group form-horizontal container" role="form">
+                <div class="col-sm-7 col-centered_wide">
+                    <input type="text" class="form-control" name="title" placeholder="Enter title">
+                </div> <!--col-sm-6-->
+            </div> <!--form-group-->
+
+            <input type="hidden" value="@ViewBag.wallName" name="wallName" />
+            <input type="hidden" value="@ViewBag.uniqueIdentifier" name="uniqueIdentifier" />
+
+            <div class="form-group form-horizontal container" role="form">
+                <div class="col-sm-7 col-centered_wide">
+                    <input type="file" id="Photo" name="file" data-buttontext="Choose photo" class="filestyle" />
+                </div> <!--col-sm-6-->
+
+            </div> <!--form-group-->
+
+            <div class="form-group form-horizontal container" role="form">
+                <div class="col-sm-7 col-centered_wide">
+                    <textarea class="form-control" name="question" id="question" rows="5" placeholder="Phrase your question"></textarea>               
+                </div> <!--col-sm-6-->
+            </div> <!--form-group-->
+
+            <br />
+
+            <div class="form-group form-horizontal container text-center" role="form">
+                <button name="button" value="AddMorePosters" class="btn btn-primary">ADD MORE PAGES</button>               
+                <button name="button" value="ThisIsMyLastPoster" class="btn btn-primary">THIS IS MY LAST PAGE</button>               
+            </div>
+        }
+    </div>
+</div> <!--container-->

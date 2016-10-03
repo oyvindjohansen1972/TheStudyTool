@@ -1,0 +1,55 @@
+﻿@using TestZuckerbergEditor.Models
+@model ViewModelClass
+
+<div class="container">
+
+    @if (Model.title != "")
+    {
+        <h2>@Model.title</h2>
+    }
+    
+    @if(Model.imageName != "")
+    {
+        <img class="img-responsive" src="@Url.Content(@Model.imageName)" alt="No image is provided" />
+        <br /> 
+    }
+    
+    @if (Model.question != "")
+    {
+        <text>
+            <h3>
+                @Model.question
+            </h3>
+        </text>
+    }
+    
+  
+       
+    @foreach (string comment in Model.comments)
+    {
+        <div class="well">
+            @comment
+        </div>
+    }     
+   
+    <br />
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">            
+            <textarea class="form-control" name="inputComment" id="inputComment" rows="5" placeholder="Write your comment here"></textarea>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-primary" style="margin-right:20px">ADD COMMENT</button>
+        @Html.ActionLink("Next page", "Mysite", "Home", new { uniqueIdentifier = @Model.uniqueIdentifier, posterPageNr = @Model.nextPageLink }, null)
+        // @Html.ActionLink(@link.description, "MySite", new { uniqueIdentifier = @link.posterIdentifier, posterPageNr = "1" })
+       
+                }
+
+
+
+
+    </div>
+
+
+
