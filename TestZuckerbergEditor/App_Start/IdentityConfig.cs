@@ -35,7 +35,7 @@ namespace TestZuckerbergEditor
             myMessage.Html = message.Body;
 
             // Create credentials, specifying your user name and password.
-            var credentials = new NetworkCredential("johansen_oyvind", "banan250");
+            var credentials = new NetworkCredential("XXXXXXXX", "XXXXXX");
 
             // Create an Web transport for sending email.
             var transportWeb = new Web(credentials);
